@@ -1,0 +1,108 @@
+xrun(64): 20.03-s017: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.03-s017: Started on Mar 25, 2024 at 10:50:46 CST
+xrun
+	adder.sv
+	alu.sv
+	aludec.sv
+	controller.sv
+	datapath.sv
+	dmem.sv
+	ex_mem_regfile.sv
+	extend.sv
+	flop.sv
+	forwarding_unit.sv
+	hazard_unit.sv
+	id_ex_regfile.sv
+	if_id_regfile.sv
+	imem.sv
+	maindec.sv
+	mem_wb_regfile.sv
+	mux2.sv
+	mux3.sv
+	regfile.sv
+	riscv.sv
+	testbench.sv
+	top.sv
+	-gui
+	-access +rwc
+Recompiling... reason: file './datapath.sv' is newer than expected.
+	expected: Sun Mar 24 15:24:19 2024
+	actual:   Mon Mar 25 10:48:48 2024
+file: controller.sv
+	   	   output logic pcsrc_E,
+	   	        |
+xmvlog: *W,POLICI (controller.sv,12|13): comma assumed just prior to this symbol to separate declarations in ANSI port list
+NOTE : This warning will be upgraded to an error in future release (20.03)..
+file: datapath.sv
+	module worklib.datapath:sv
+		errors: 0, warnings: 0
+file: riscv.sv
+	module worklib.riscv:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		testbench
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+datapath dp(clk, reset, resultsrc_D, alucontrol_D, alusrc_D, immsrc_D, regwrite_D, memwrite_D, jump_D, branch_D, instr_D, readdata_M, pc_F, aluresult_M, writedata_M, stall_D, flush_D, pcplus4_F, pcsrc_E, zero_E, branch_E, jump_E, pc_D, pcplus4_D, memwrite_M);
+                                                                                                                                                                                                                                                                |
+xmelab: *W,CUVMPW (./riscv.sv,42|256): port sizes differ in port connection (1/32).
+hazard_unit hazard_instance (instr_D[19:15], instr_D[24:20], Rd_E, resultsrc_E, pcsrc_E, stall_F, stall_D, flush_D, flush_E);
+                                                                |
+xmelab: *W,CUVMPW (./datapath.sv,99|64): port sizes differ in port connection (32/5).
+id_ex_regfile id_ex_inst(clk,flush_E, regwrite_D, resultsrc_D, memwrite_D, jump_D, branch_D, alucontrol_D, alusrc_D, immsrc_D, rd1_D, rd2_D, pc_D, instr_D[19:15], instr_D[24:20], instr_D[11:7], immext_D, pcplus4_D, regwrite_E, resultsrc_E, memwrite_E, jump_E, branch_E, alucontrol_E,alusrc_E, rd1_E, rd2_E, pc_E, rs1_E, rs2_E, Rd_E, immext_E, pcplus4_E);
+                                                                                                                                                                                                                                                                                                                             |
+xmelab: *W,CUVMPW (./datapath.sv,102|317): port sizes differ in port connection (32/5).
+id_ex_regfile id_ex_inst(clk,flush_E, regwrite_D, resultsrc_D, memwrite_D, jump_D, branch_D, alucontrol_D, alusrc_D, immsrc_D, rd1_D, rd2_D, pc_D, instr_D[19:15], instr_D[24:20], instr_D[11:7], immext_D, pcplus4_D, regwrite_E, resultsrc_E, memwrite_E, jump_E, branch_E, alucontrol_E,alusrc_E, rd1_E, rd2_E, pc_E, rs1_E, rs2_E, Rd_E, immext_E, pcplus4_E);
+                                                                                                                                                                                                                                                                                                                                    |
+xmelab: *W,CUVMPW (./datapath.sv,102|324): port sizes differ in port connection (32/5).
+id_ex_regfile id_ex_inst(clk,flush_E, regwrite_D, resultsrc_D, memwrite_D, jump_D, branch_D, alucontrol_D, alusrc_D, immsrc_D, rd1_D, rd2_D, pc_D, instr_D[19:15], instr_D[24:20], instr_D[11:7], immext_D, pcplus4_D, regwrite_E, resultsrc_E, memwrite_E, jump_E, branch_E, alucontrol_E,alusrc_E, rd1_E, rd2_E, pc_E, rs1_E, rs2_E, Rd_E, immext_E, pcplus4_E);
+                                                                                                                                                                                                                                                                                                                                          |
+xmelab: *W,CUVMPW (./datapath.sv,102|330): port sizes differ in port connection (32/5).
+forwarding_unit forwarding_inst(rs1_E, rs2_E, aluresult_M, regwrite_M, Rd_M, regwrite_W, Rd_W, forwardA_E, forwardB_E);
+                                    |
+xmelab: *W,CUVMPW (./datapath.sv,112|36): port sizes differ in port connection (32/5).
+forwarding_unit forwarding_inst(rs1_E, rs2_E, aluresult_M, regwrite_M, Rd_M, regwrite_W, Rd_W, forwardA_E, forwardB_E);
+                                           |
+xmelab: *W,CUVMPW (./datapath.sv,112|43): port sizes differ in port connection (32/5).
+forwarding_unit forwarding_inst(rs1_E, rs2_E, aluresult_M, regwrite_M, Rd_M, regwrite_W, Rd_W, forwardA_E, forwardB_E);
+                                                        |
+xmelab: *W,CUVMPW (./datapath.sv,112|56): port sizes differ in port connection (32/5).
+ex_mem_regfile ex_mem_instance(clk, regwrite_E, resultsrc_E, memwrite_E, aluresult_E, writedata_E, Rd_E, pcplus4_E, regwrite_M, resultsrc_M, memwrite_M, aluresult_M, writedata_M, Rd_M, pcplus4_M);
+                                                                                                      |
+xmelab: *W,CUVMPW (./datapath.sv,115|102): port sizes differ in port connection (32/5).
+ex_mem_regfile ex_mem_instance(clk, regwrite_E, resultsrc_E, memwrite_E, aluresult_E, writedata_E, Rd_E, pcplus4_E, regwrite_M, resultsrc_M, memwrite_M, aluresult_M, writedata_M, Rd_M, pcplus4_M);
+                                                                                                                                                      |
+xmelab: *W,CUVMPW (./datapath.sv,115|150): port sizes differ in port connection (32/1).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.datapath:sv <0x3d9946e5>
+			streams:  86, words: 21538
+		worklib.riscv:sv <0x5c301b53>
+			streams:  45, words: 10530
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:              26      22
+		Registers:           157     154
+		Scalar wires:         94       -
+		Expanded wires:       39       2
+		Vectored wires:      183       -
+		Always blocks:        16      16
+		Initial blocks:        2       2
+		Cont. assignments:    15      11
+		Pseudo assignments:  158     158
+	Writing initial simulation snapshot: worklib.testbench:sv
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /usr/local/cadence/installs/XCELIUM2003/tools/xcelium/files/xmsimrc
+xcelium> run
+La simulacion tuvo exito :)
+Simulation stopped via $stop(1) at time 275 NS + 1
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	20.03-s017: Exiting on Mar 25, 2024 at 10:53:22 CST  (total: 00:02:36)
